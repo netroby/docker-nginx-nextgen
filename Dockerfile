@@ -2,7 +2,7 @@ FROM ubuntu:wily
 
 RUN apt-get update ; \
     apt-get dist-upgrade -y ; \
-    apt-get install -y wget libgoogle-perftools-dev; \
+    apt-get install -y wget libgoogle-perftools-dev vim-tiny; \
     apt-get build-dep nginx -y;\
     wget http://nginx.org/download/nginx-1.9.9.tar.gz; \
     tar zxvf nginx-1.9.9.tar.gz ;\
