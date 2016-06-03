@@ -9,14 +9,6 @@
             "poll": 3,
             "ttl": 10
         }
-    ],
-    "backends": [
-        {
-            "name": "node-hhvm",
-            "poll": 3,
-            "onChange": "consul-template -once -dedup -consul consul:8500  -template \"/etc/nginx/nginx.conf.ctmpl:/etc/nginx/nginx.conf:nginx -s reload\""
-        }
     ]
-
 }
 
