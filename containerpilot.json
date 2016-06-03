@@ -1,10 +1,11 @@
 {
     "consul": "consul:8500",
+    "preStart": "consul-template -once  -dedup -consul consul:8500  -template \"/etc/nginx/nginx.conf.ctmpl:/etc/nginx/nginx.conf\"",
     "services": [
         {
             "name": "webfront",
             "port": 80,
-            "health": "wget -qO- http://localhost:80 > /dev/null",
+            "health": "wget -qO- http://localhost/health > /dev/null",
             "poll": 3,
             "ttl": 10
         }

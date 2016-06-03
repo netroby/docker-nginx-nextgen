@@ -36,7 +36,8 @@ EXPOSE 80 443
 ENV HOME /root
 WORKDIR /root
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf.ctmpl /etc/nginx/nginx.conf.ctmpl
+
 CMD ["/bin/containerpilot", "nginx", "-g", "daemon off;"]
 
 
